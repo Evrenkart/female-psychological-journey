@@ -1,1 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>The Female Psychological Journey</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            background: #faf7f5;
+            color: #302629;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(250, 247, 245, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid #eadfdc;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #302629;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #a85d70;
+        }
+
+        .telegram-button {
+            background: #302629;
+            color: white !important;
+            padding: 12px 22px;
+            border-radius: 30px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 80px;
+            background:
+                radial-gradient(circle at top left, #f0dfe2, transparent 40%),
+                radial-gradient(circle at bottom right, #e8d7d1, transparent 40%),
+                #faf7f5;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .small-title {
+            font-family: Arial, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 13px;
+            color: #a85d70;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 8vw, 90px);
+            line-height: 1;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: #6b5d60;
+        }
+
+        .hero-buttons {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #302629;
+            color: white;
+        }
+
+        .primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .secondary {
+            border: 1px solid #302629;
+            color: #302629;
+        }
+
+        .secondary:hover {
+            background: #302629;
+            color: white;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 650px;
+            margin: 0 auto 60px;
+            font-family: Arial, sans-serif;
+            color: #6b5d60;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: #5f5558;
+        }
+
+        /* TOPICS */
+
+        .topics {
+            background: #f4ebe9;
+        }
+
+        .topic-grid {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .topic {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .topic:hover {
+            transform: translateY(-8px);
+        }
+
+        .topic-number {
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            color: #a85d70;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .topic h3 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .topic p {
+            font-family: Arial, sans-serif;
+            color: #75696c;
+        }
+
+        /* CTA */
+
+        .cta {
+            text-align: center;
+            background: #302629;
+            color: white;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 20px auto 35px;
+            font-family: Arial, sans-serif;
+            color: #d8cdcf;
+        }
+
+        .cta .button {
+            background: white;
+            color: #302629;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px 7%;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            color: #7b6f72;
+            background: #faf7f5;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 18px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .logo {
+                font-size: 16px;
+            }
+
+            .hero {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            section {
+                padding: 75px 5%;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+        <div class="logo">
+            THE FEMALE JOURNEY
+        </div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#topics">Topics</a></li>
+            <li>
+                <a class="telegram-button"
+                   href="https://t.me/+lx2Nn1zTmnc2ZTFl"
+                   target="_blank">
+                    Join Telegram
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                Understanding the inner world
+            </div>
+
+            <h1>
+                The Female<br>
+                Psychological Journey
+            </h1>
+
+            <p>
+                Explore psychology, emotions, relationships,
+                communication and the fascinating world of human behaviour.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a class="button primary"
+                   href="https://t.me/+lx2Nn1zTmnc2ZTFl"
+                   target="_blank">
+                    Join Our Telegram
+                </a>
+
+                <a class="button secondary"
+                   href="#about">
+                    Explore
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+
+        <h2 class="section-title">
+            A Journey Within
+        </h2>
+
+        <p class="section-subtitle">
+            Discover ideas that help you understand emotions,
+            behaviour and relationships from a deeper perspective.
+        </p>
+
+        <div class="about-content">
+
+            <p>
+                The Female Psychological Journey is a space dedicated
+                to exploring the psychological and emotional dimensions
+                of everyday life.
+            </p>
+
+            <br>
+
+            <p>
+                Through thoughtful content and interesting perspectives,
+                we explore the patterns behind emotions, relationships,
+                communication and human behaviour.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- TOPICS -->
+
+    <section class="topics" id="topics">
+
+        <h2 class="section-title">
+            Explore Our Topics
+        </h2>
+
+        <p class="section-subtitle">
+            Ideas, observations and perspectives designed to encourage
+            curiosity and self-awareness.
+        </p>
+
+
+        <div class="topic-grid">
+
+            <div class="topic">
+
+                <div class="topic-number">
+                    01
+                </div>
+
+                <h3>
+                    Female Psychology
+                </h3>
+
+                <p>
+                    Explore psychological patterns,
+                    emotions and behaviour.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <div class="topic-number">
+                    02
+                </div>
+
+                <h3>
+                    Relationships
+                </h3>
+
+                <p>
+                    Understand connection,
+                    communication and relationship dynamics.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <div class="topic-number">
+                    03
+                </div>
+
+                <h3>
+                    Emotions
+                </h3>
+
+                <p>
+                    Explore emotional experiences
+                    and the psychology behind them.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <div class="topic-number">
+                    04
+                </div>
+
+                <h3>
+                    Human Behaviour
+                </h3>
+
+                <p>
+                    Discover fascinating patterns
+                    in human behaviour.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <div class="topic-number">
+                    05
+                </div>
+
+                <h3>
+                    Communication
+                </h3>
+
+                <p>
+                    Learn about communication,
+                    expression and understanding.
+                </p>
+
+            </div>
+
+
+            <div class="topic">
+
+                <div class="topic-number">
+                    06
+                </div>
+
+                <h3>
+                    Self Awareness
+                </h3>
+
+                <p>
+                    Develop curiosity about yourself
+                    and the world around you.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TELEGRAM CTA -->
+
+    <section class="cta">
+
+        <h2 class="section-title">
+            Continue the Journey
+        </h2>
+
+        <p>
+            Join our Telegram channel and explore new
+            perspectives on psychology, emotions and relationships.
+        </p>
+
+        <a class="button"
+           href="https://t.me/+lx2Nn1zTmnc2ZTFl"
+           target="_blank">
+            Join Telegram
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 The Female Psychological Journey.
+        All rights reserved.
+
+    </footer>
+
+</body>
+</html>
